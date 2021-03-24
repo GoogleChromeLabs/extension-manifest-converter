@@ -1,0 +1,7 @@
+# Don't throw an exception (e.g. file not found).
+# extension.py -d for dry run to only show logs of what would happen.
+# extension.py -o <output-path>.
+# extension.py -l <log-level>.
+# ExecuteScriptModifier: Also update content instead of just search and replace.
+# service_worker.js: Allow name to be specified on command line.
+# Consider using argparse.

@@ -1,0 +1,15 @@
+{
+  "name": "Tabs To Urls",
+  "description": "",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "clipboardWrite"
+  ],
+  "icons": { "128": "128.gif" },
+  "author": "solomonkinard"
+}

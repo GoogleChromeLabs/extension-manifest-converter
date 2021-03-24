@@ -1,0 +1,14 @@
+{
+  "name": "Time Badge",
+  "description": "Time now visible on the extension icon when clicked.",
+  "author": "Solomon Kinard",
+  "icons": {"128": "time.png"},
+  "incognito": "split",
+  "manifest_version": 3,
+  "version": "1.0",
+  "action": {},
+  "permissions": ["alarms"],
+  "background": {
+    "service_worker": "worker.js"
+  }
+}

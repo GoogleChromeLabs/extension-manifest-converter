@@ -1,0 +1,11 @@
+{
+  "name": "test23simple",
+  "description": "",
+  "author": "Solomon Kinard",
+  "incognito": "split",
+  "manifest_version": 2,
+  "version": "1.0",
+  "permissions": [
+    "tabs"
+  ]
+}

@@ -1,0 +1,18 @@
+:root {
+  --main-bg-color: #303030;
+  --main-fg-color: white;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  color: var(--main-fg-color);
+}
+
+button {
+  background-color: var(--main-bg-color);
+  color: var(--main-fg-color);
+}
+
+a {
+  color: white;
+}

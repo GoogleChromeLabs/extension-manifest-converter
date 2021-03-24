@@ -1,0 +1,17 @@
+{
+  "name": "background.scripts.mv2",
+  "description": "Background scripts mv2",
+  "author": "Solomon Kinard",
+  "icons": {"128": "icon.png"},
+  "incognito": "split",
+  "manifest_version": 2,
+  "version": "1.0",
+  "browser_action": {"default_popup": "popup.html"},
+  "permissions": ["storage"],
+  "background": {
+    "scripts": [
+      "script1.js",
+      "script2.js"
+    ]
+  }
+}

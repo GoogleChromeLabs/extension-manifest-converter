@@ -1,0 +1,35 @@
+body {
+  background-color: black;
+  color: white;
+  min-width: 400px;
+}
+
+.nobr {
+  white-space: nowrap
+}
+
+.margin-right-half {
+  margin-right: 0.5em;
+}
+
+#addText {
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+.button {
+  border-radius: 50%;
+  transition-duration: 0.4s;
+  color: white;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}
+
+.button:hover {
+  color: orange;
+}

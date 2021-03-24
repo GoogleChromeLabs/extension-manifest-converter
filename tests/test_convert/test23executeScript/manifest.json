@@ -1,0 +1,13 @@
+{
+  "name": "test23executeScript",
+  "description": "Text converting executeScript from MV2 to MV3.",
+  "author": "Solomon Kinard",
+  "incognito": "split",
+  "manifest_version": 2,
+  "version": "1.0",
+  "permissions": ["activeTab"],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {}
+}

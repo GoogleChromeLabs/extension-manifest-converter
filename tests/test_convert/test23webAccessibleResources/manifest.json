@@ -1,0 +1,17 @@
+{
+  "name": "test23webAccessibleResources",
+  "description": "",
+  "author": "Solomon Kinard",
+  "incognito": "split",
+  "manifest_version": 2,
+  "version": "1.0",
+  "web_accessible_resources": [
+    "1.html",
+    "2.html"
+  ],
+  "browser_action": {},
+  "permissions": ["activeTab"],
+  "background": {
+    "scripts": ["background.js"]
+  }
+}

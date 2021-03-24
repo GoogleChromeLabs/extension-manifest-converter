@@ -1,0 +1,18 @@
+{
+  "name": "Todos",
+  "description": "TODO list made simple.",
+  "author": "Solomon Kinard",
+  "icons": {"128": "icon.png"},
+  "incognito": "split",
+  "manifest_version": 3,
+  "version": "1.0",
+  "action": {"default_popup": "popup.html"},
+  "permissions": ["storage"],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "background": {
+    "service_worker": "service_worker.js"
+  }
+}

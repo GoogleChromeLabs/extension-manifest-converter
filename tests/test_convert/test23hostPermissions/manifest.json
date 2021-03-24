@@ -1,0 +1,17 @@
+{
+  "name": "test23hostPermissions",
+  "description": "",
+  "author": "Solomon Kinard",
+  "incognito": "split",
+  "manifest_version": 2,
+  "version": "1.0",
+  "permissions": [
+    "tabs",
+    "bookmarks",
+    "http://www.blogger.com/"
+  ],
+  "optional_permissions": [
+    "*://*/*",
+    "unlimitedStorage"
+  ]
+}
