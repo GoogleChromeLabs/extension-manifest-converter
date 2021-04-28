@@ -74,11 +74,13 @@ Next, clone this repository locally.
     ```bash
     python3 extension.py dir/path/
     ```
+
 * Convert a manifest file
 
     ```bash
     python3 extension.py manifest.json
     ```
+
 * Convert a .zip file
 
     ```bash
