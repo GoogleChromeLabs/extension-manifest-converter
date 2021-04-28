@@ -84,3 +84,8 @@ To use this tool, you'll need to set it up by following the steps below.
     ```bash
     python3 emc.py extension.zip
     ```
+    
+## License
+[Apache 2.0](https://github.com/GoogleChromeLabs/extension-manifest-converter/blob/master/LICENSE)
+
+This is not an official Google product.
