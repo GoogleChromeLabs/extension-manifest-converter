@@ -37,9 +37,7 @@ This tool does not:
 
 ## Installation
 
-To use this tool, you will first need Python 3 installed on your system.
-
-Next, clone this repository locally.
+To use this tool, you'll need to set it up by following the steps below.
 
 1. Make sure Python 3 is installed.
 
