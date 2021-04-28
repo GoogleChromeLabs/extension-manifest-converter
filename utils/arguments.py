@@ -30,7 +30,7 @@ class Arguments:
     self.dict = dict
 
   def usage(self) -> None:
-    return """usage: python3 extension.py <path>
+    return """usage: python3 emc.py <path>
 
 A valid path is one of the following:
   Extension zip file

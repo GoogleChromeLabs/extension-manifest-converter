@@ -59,7 +59,7 @@ To use this tool, you'll need to set it up by following the steps below.
 4. Execute the test command.
 
     ```bash
-    python3 extension.py
+    python3 emc.py
     ```
 
     The tool should log basic usage information to the console.
@@ -70,17 +70,17 @@ To use this tool, you'll need to set it up by following the steps below.
 * Convert a directory
 
     ```bash
-    python3 extension.py dir/path/
+    python3 emc.py dir/path/
     ```
 
 * Convert a manifest file
 
     ```bash
-    python3 extension.py manifest.json
+    python3 emc.py manifest.json
     ```
 
 * Convert a .zip file
 
     ```bash
-    python3 extension.py extension.zip
+    python3 emc.py extension.zip
     ```

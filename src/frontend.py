@@ -17,6 +17,7 @@ from utils.unzip import Unzip
 from utils.zip import Zip
 from .type import Type, TypeEnum
 from .worker import Worker
+from .logger import Logger
 
 class Frontend:
   def __init__(self, args):
@@ -46,22 +47,33 @@ class Frontend:
     worker = Worker()
     worker.work(source)
 
+    # Maybe remove working or source directory.
+    # Destination directories are created alongside source with _delete
+    # appended.
     if type is TypeEnum.ZIP:
+      Logger().log("Replacing .zip file")
+
+      # Create zip for working directory.
       prev_source = source
       source = source + '_delete'
-      # TODO: This project should not rely on / paths on Windows.
       os.mkdir(dirname + '/tmp_delete')
       shutil.move(source, dirname + '/tmp_delete/extension/')
       Zip().zip(dirname + '/tmp_delete', source)
 
+      # Delete working directory.
       shutil.rmtree(dirname + '/tmp_delete')
       shutil.rmtree(prev_source)
       os.remove(original_source)
       os.rename(source + '.zip', original_source)
-    elif type is TypeEnum.MANIFEST or type is TypeEnum.JS:
+    # A manifest.json file replaces the original.
+    # TODO: Consistent replacement behavior with dir, zip, and manifest.json.
+    elif type is TypeEnum.MANIFEST:
+      Logger().log("Replacing manifest.json")
       os.remove(source + os.sep + os.path.basename(original_source))
       os.rmdir(source)
       source = source + '_delete/'
       os.rename(source + os.path.basename(original_source), original_source)
       os.rmdir(source)
-      # shutil.rmtree(source)
+    elif type is TypeEnum.DIR:
+      # TODO: A better destination could be something other than _delete.
+      Logger().log("Converted extension into: {}_delete".format(source))
