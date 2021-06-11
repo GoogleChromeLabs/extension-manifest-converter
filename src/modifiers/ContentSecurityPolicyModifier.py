@@ -17,14 +17,18 @@ class ContentSecurityPolicyModifier(Modifier):
     pass
 
   def _mv3(self):
+    candidate = {}
     manifest = self.wrapper.manifest
     key = 'content_security_policy'
-    if key not in manifest: return
-    Logger().log("Changing content_security_policy in manifest.json")
-    value = manifest[key]
-    candidate = {
-      "extension_pages": value,
-      "sandbox": ""
-    }
+    if key in manifest:
+      value = manifest[key]
+      candidate["extension_pages"] = value
+    if "sandbox" in manifest and key in manifest["sandbox"]:
+      candidate["sandbox"] = manifest["sandbox"][key]
+      del manifest["sandbox"]
+    if candidate:
+      Logger().log("Changing CSP (content_security_policy) in manifest.json")
+      Logger().log("Valid CSP directives for {script,object,worker}-src are {self,none,localhost,127.0.0.1}.")
+
     self.wrapper.manifest[key] = candidate
     self.writeManifest()
