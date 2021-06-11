@@ -24,7 +24,8 @@ class ContentSecurityPolicyModifier(Modifier):
       value = manifest[key]
       candidate["extension_pages"] = value
     if "sandbox" in manifest and key in manifest["sandbox"]:
-      candidate["sandbox"] = manifest["sandbox"]
+      candidate["sandbox"] = manifest["sandbox"][key]
+      del manifest["sandbox"]
     if candidate:
       Logger().log("Changing CSP (content_security_policy) in manifest.json")
       Logger().log("Valid CSP directives for {script,object,worker}-src are {self,none,localhost,127.0.0.1}.")
