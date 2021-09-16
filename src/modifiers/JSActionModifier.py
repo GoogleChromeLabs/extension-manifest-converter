@@ -25,7 +25,7 @@ class JSActionModifier(Modifier):
         if str(Path(name).suffix) != '.js': continue
         path = root + os.sep + os.sep.join(dirs) + name
         if os.path.exists(path):
-          with open(path, 'r+') as file:
+          with open(path, 'r+', encoding='UTF-8') as file:
             search = ['chrome.browserAction.', 'chrome.pageAction.']
             replace = 'chrome.action.'
             data = file.read()

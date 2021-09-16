@@ -31,11 +31,11 @@ class ServiceWorkerModifier(Modifier):
     new_filename = 'service_worker.js'
     path = self.wrapper.destination + os.sep + new_filename
     filenames = manifest['background']['scripts']
-    with open(path, 'w') as outfile:
+    with open(path, 'w', encoding='UTF-8') as outfile:
       for fname in filenames:
         scriptFile = self.wrapper.destination + os.sep + fname
         if os.path.exists(scriptFile):
-          with open(scriptFile) as infile:
+          with open(scriptFile, encoding='UTF-8') as infile:
             for line in infile:
               outfile.write(line)
           os.remove(scriptFile)
