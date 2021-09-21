@@ -29,5 +29,5 @@ class Modifier:
     if not os.path.exists(manifest_file):
       return
     if os.path.exists(manifest_file):
-      with open(manifest_file, 'w') as outfile:
+      with open(manifest_file, 'w', encoding='UTF-8') as outfile:
         json.dump(self.wrapper.manifest, outfile, indent=2)
