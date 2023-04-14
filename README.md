@@ -1,3 +1,5 @@
+# Extension Manifest Converter
+
 Extension Manifest Converter is an open source tool that helps convert existing Chrome extensions to
 Manifest V3. Use it to convert:
 
