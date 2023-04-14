@@ -1,30 +1,39 @@
+# Extension Manifest Converter
+
 Extension Manifest Converter is an open source tool that helps convert existing Chrome extensions to
-Manifest V3. Use it to convert an entire directory, extension zip file, or just a manifest.json
-file. All expected changes are applied to manifest.json.
+Manifest V3. Use it to convert:
 
-## Features
+-  an entire unpacked directory
+-  an extension zip file
+-  just a manifest.json file.
 
-* Performs conversions on
-  * unpacked extension directories
-  * zip files containing an extension
-  * manifest.json
-* General manifest.json conversions
-  * Updates `manifest_version` field
-  * Converts between host permissions declared in `permissions` or `optional_permissions` in MV2 and
-    `host_permissions` in MV3
-  * Converts between a `content_security_policy` string in MV2 and `content_security_policy` object
-    with`extension_pages` and `sandbox` properties in MV3
-  * Converts between `background.scripts` in MV2 and background service workers
-    `background.service_worker` in MV3
-* Scripting API conversions
-  * Converts `chrome.tabs.executeScript` in MV2 to `chrome.scripting.executeScript` in MV3. If
-    necessary, also adds `scripting` to the `permissions` array in manifest.json.
-  * Converts `chrome.tabs.insertCSS` in Mv2 to `chrome.scripting.insertCSS` in MV3. If necessary,
-    also adds `scripting` to the `permissions` array in manifest.json.
-* Action API conversions
-  * Converts calls to `chrome.browserAction` and `chrome.pageAction` in MV2 into `chrome.action` in
-    MV3
-  * Converts `browser_action` and `page_action` manifest entries in MV2 into `action` in MV3
+After using the tool, complete the conversion using instructions in the [Migrate to Manifest
+V3](https://developer.chrome.com/docs/extensions/migrating/) guide. This tool makes the conversions
+listed below. To make completion of the upgrading easier, the titles and bullets below roughly
+correspond to the wording of the headings and items in
+[the migration guide's checklist](https://developer.chrome.com/docs/extensions/migrating/checklist/).
+
+## Updates to the manifest
+
+-  Changes the manifest version number. 
+-  Updates the host permissions.
+
+## Updates that migrate to a service worker
+
+-  Upgrades the `"background"` field in the manifest.
+
+## Updates to API calls
+
+-  Replaces `tabs.executeScript()` with `scripting.executeScript()`. (If necessary, also adds
+    `scripting` to the `permissions` array in the `manifest.json`.)
+-  Replaces `tabs.insertCSS()` with `scripting.insertCSS()`. You will still need to
+    [replace `tabs.removeCSS()` with `scripting.removeCSS()](https://developer.chrome.com/docs/extensions/migrating/api-calls/#replace-insertcss-removecss)`.
+    (If necessary, also adds `scripting` to the `permissions` array in manifest.json.)
+-  Replaces Browser Actions and Page Actions with Actions and makes related changes to the manifest.
+
+## Improvement to extension security
+
+-  Updates the content security policy.
 
 ## Limitations
 
@@ -33,11 +42,11 @@ and replace changes are applied to `.js` files.
 
 This tool does not:
 
-* update any service worker code that relies on a DOM
+* update any service worker code that relies on the DOM.
 
 ## Installation
 
-To use this tool, you'll need to set it up by following the steps below.
+To use this tool, follow the steps below.
 
 1. Make sure Python 3 is installed.
 
@@ -62,7 +71,7 @@ To use this tool, you'll need to set it up by following the steps below.
     python3 emc.py
     ```
 
-    The tool should log basic usage information to the console.
+    The tool logs basic usage information to the console.
 
 
 ## Usage
