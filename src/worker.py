@@ -46,7 +46,7 @@ class Worker:
       Logger().log("Missing manifest", 0)
     else:
       if os.path.exists(manifest_path):
-        with open(manifest_path) as json_file:
+        with open(manifest_path, 'r+', encoding='UTF-8') as json_file:
           manifest = json.load(json_file)
     self.wrapper = Wrapper(destination, manifest)
 
